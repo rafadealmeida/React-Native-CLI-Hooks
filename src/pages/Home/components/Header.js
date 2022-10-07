@@ -1,6 +1,7 @@
 import React from 'react';
 import {Image, Text, View, StyleSheet} from 'react-native';
 import logo from '../../../../src/assets/logo.png';
+import {getTop} from '../../../service/GetData';
 
 function Header() {
   return (
@@ -24,12 +25,14 @@ const styles = StyleSheet.create({
     height: 28,
   },
   title: {
+    color: '#464646',
     fontSize: 26,
     lineHeight: 42,
     fontWeight: 'bold',
     marginTop: 24,
   },
   description: {
+    color: '#A3A3A3',
     fontSize: 16,
     lineHeight: 26,
   },

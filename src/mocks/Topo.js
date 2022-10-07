@@ -1,5 +1,5 @@
 const topo = {
-  boasVindas: 'Olá Natalia',
+  boasVindas: 'Olá, Sara!',
   legenda: 'Encontre os melhores produtores',
 };
 
