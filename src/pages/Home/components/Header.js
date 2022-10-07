@@ -4,10 +4,10 @@ import logo from '../../../../src/assets/logo.png';
 
 function Header() {
   return (
-    <View>
+    <View style={styles.header}>
       <Image source={logo} style={styles.logo} />
-      <Text style={styles.title}>Olá seja bem vinda Sara!</Text>
-      <Text>Encontre os melhores produtores!</Text>
+      <Text style={styles.title}>Olá, Sara!</Text>
+      <Text style={styles.description}>Encontre os melhores produtores!</Text>
     </View>
   );
 }
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 24,
   },
-  legend: {
+  description: {
     fontSize: 16,
     lineHeight: 26,
   },
