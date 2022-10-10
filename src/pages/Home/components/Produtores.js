@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList, Text, StyleSheet} from 'react-native';
 import {getProdutores} from '../../../service/GetData';
+import CardProdutor from './CardProdutor';
 
 function Produtores({header: Topo}) {
   const [titulo, setTitulo] = useState('');
@@ -23,7 +24,7 @@ function Produtores({header: Topo}) {
   return (
     <FlatList
       data={lista}
-      renderItem={({item: {nome}}) => <Text>{nome}</Text>}
+      renderItem={({item}) => <CardProdutor {...item} />}
       keyExtractor={({nome}) => nome}
       ListHeaderComponent={Header}
     />
