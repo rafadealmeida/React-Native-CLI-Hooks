@@ -1,12 +1,16 @@
 import React from 'react';
 import {Text, View, Image, StyleSheet} from 'react-native';
+import Estrelas from '../../../components/estrelas';
 
 function CardProdutor({nome, imagem, distancia, estrelas}) {
   return (
     <View style={styles.card}>
       <Image source={imagem} accessibilityLabel={nome} style={styles.imagem} />
       <View style={styles.info}>
-        <Text style={styles.nome}>{nome}</Text>
+        <View>
+          <Text style={styles.nome}>{nome}</Text>
+          <Estrelas quantidade={estrelas} />
+        </View>
         <Text style={styles.distancia}>{distancia}</Text>
       </View>
     </View>
