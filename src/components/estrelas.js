@@ -24,7 +24,10 @@ function Estrelas({
 
     for (let i = 0; i < 5; i++) {
       listasEstrelas.push(
-        <TouchableOpacity key={i} onPress={() => {}} disable={!editavel}>
+        <TouchableOpacity
+          key={i}
+          onPress={() => setQuantidade(i + 1)}
+          disable={!editavel}>
           <Image source={getImage(i)} style={styles.estrela} />
         </TouchableOpacity>,
       );
