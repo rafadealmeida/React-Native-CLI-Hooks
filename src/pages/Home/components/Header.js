@@ -1,14 +1,23 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Image, Text, View, StyleSheet} from 'react-native';
 import logo from '../../../../src/assets/logo.png';
-import {getTop} from '../../../service/GetData';
+import {getTopo} from '../../../service/GetData';
 
 function Header() {
+  const [titulo, setTitulo] = useState('');
+  const [legenda, setLegenda] = useState('');
+
+  useEffect(() => {
+    const response = getTopo();
+    setTitulo(response.boasVindas);
+    setLegenda(response.legenda);
+  }, []);
+
   return (
     <View style={styles.header}>
       <Image source={logo} style={styles.logo} />
-      <Text style={styles.title}>Olá, Sara!</Text>
-      <Text style={styles.description}>Encontre os melhores produtores!</Text>
+      <Text style={styles.title}>{titulo}</Text>
+      <Text style={styles.description}>{legenda}</Text>
     </View>
   );
 }

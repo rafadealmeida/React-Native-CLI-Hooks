@@ -5,8 +5,7 @@ import Produtores from './components/Produtores';
 function Home() {
   return (
     <>
-      <Header />
-      <Produtores />
+      <Produtores header={Header} />
     </>
   );
 }

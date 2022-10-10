@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {FlatList, Text, StyleSheet} from 'react-native';
 import {getProdutores} from '../../../service/GetData';
 
-function Produtores() {
+function Produtores({header: Topo}) {
   const [titulo, setTitulo] = useState('');
   const [lista, setLista] = useState([]);
 
@@ -13,12 +13,18 @@ function Produtores() {
   }, []);
 
   const Header = () => {
-    return <Text style={styles.header}>{titulo}</Text>;
+    return (
+      <>
+        <Topo />
+        <Text style={styles.header}>{titulo}</Text>
+      </>
+    );
   };
   return (
     <FlatList
       data={lista}
       renderItem={({item: {nome}}) => <Text>{nome}</Text>}
+      keyExtractor={({nome}) => nome}
       ListHeaderComponent={Header}
     />
   );
@@ -32,6 +38,6 @@ const styles = StyleSheet.create({
     lineHeight: 32,
     marginHorizontal: 16,
     marginTop: 16,
-    fontWeight: 'bold',
+    // fontWeight: 'bold',{}
   },
 });
