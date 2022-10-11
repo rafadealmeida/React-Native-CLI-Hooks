@@ -1,17 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {FlatList, Text, StyleSheet} from 'react-native';
-import {getProdutores} from '../../../service/GetData';
 import CardProdutor from './CardProdutor';
+import useProdutores from '../../../hooks/useProdutores';
 
 function Produtores({header: Topo}) {
-  const [titulo, setTitulo] = useState('');
-  const [lista, setLista] = useState([]);
-
-  useEffect(() => {
-    const response = getProdutores();
-    setTitulo(response.titulo);
-    setLista(response.lista);
-  }, []);
+  const [titulo, lista] = useProdutores();
 
   const Header = () => {
     return (
@@ -39,6 +32,6 @@ const styles = StyleSheet.create({
     lineHeight: 32,
     marginHorizontal: 16,
     marginTop: 16,
-    // fontWeight: 'bold',{}
+    fontWeight: 'bold',
   },
 });
